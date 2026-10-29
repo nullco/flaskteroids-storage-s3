@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=84.0.0", "wheel>=0.48.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flaskteroids-storage-s3"
+version = "0.1.0"
+description = "S3-compatible storage adapter for Flaskteroids attachments"
+readme = "README.md"
+requires-python = ">=3.14"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Juan Sebastian Quintero" }]
+dependencies = ["flaskteroids>=0.11.0,<0.12", "boto3>=1.35"]
+
+[project.entry-points."flaskteroids.storage"]
+S3 = "flaskteroids_storage_s3:S3Service"
+
+[tool.setuptools.packages.find]
+include = ["flaskteroids_storage_s3", "flaskteroids_storage_s3.*"]
+
+[dependency-groups]
+dev = ["pytest>=9.1.1", "pytest-mock>=3.16.0", "ruff>=0.17.0"]
+
+# Develop against the unreleased storage contract in the sibling checkout.
+[tool.uv.sources]
+flaskteroids = { path = "../flaskteroids", editable = true }
+
+[tool.pytest.ini_options]
+markers = ["system: browser-driven framework tests"]
+
+[tool.ruff]
+target-version = "py314"
+line-length = 88
+force-exclude = true
+extend-exclude = ["build", "dist", "*.egg-info"]
+
+[tool.ruff.lint]
+select = [
+    "E4", "E7", "E9", "F", "W", "I", "B", "UP",
+    "BLE001", "S110", "S112", "PLC0415", "PLW1510", "RUF012", "RUF022", "RUF100",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
