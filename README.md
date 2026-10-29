@@ -37,10 +37,8 @@ must permit this. Private objects use expiring signed URLs.
 
 ## Development
 
-This is an unreleased package developed alongside the sibling Flaskteroids
-checkout. That checkout must contain the new storage contract; the previously
-published framework does not provide it. Set the published framework version
-requirement to the release introducing that contract before publishing this package.
+Requires Flaskteroids 0.12.0 or newer. Development and CI install the released
+framework dependency from the package index; no sibling checkout is required.
 
 ```sh
 uv sync --locked --dev
@@ -49,6 +47,6 @@ uv run ruff check .
 uv run ruff format --check .
 ```
 
-The local uv source uses `../flaskteroids`. Tests require boto3 (a runtime
-dependency), but no cloud credentials, network requests, or running S3 service.
+Tests require boto3 (a runtime dependency), but no cloud credentials, network
+requests, or running S3 service.
 Provider tests use botocore stubs and run the framework's shared storage contract.

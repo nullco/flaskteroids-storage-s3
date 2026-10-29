@@ -300,8 +300,8 @@ wheels = [
 
 [[package]]
 name = "flaskteroids"
-version = "0.11.0"
-source = { editable = "../flaskteroids" }
+version = "0.12.0"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "alembic" },
     { name = "celery" },
@@ -315,35 +315,9 @@ dependencies = [
     { name = "pyyaml" },
     { name = "sqlalchemy" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "alembic", specifier = ">=1.20.0" },
-    { name = "celery", specifier = ">=5.6.3" },
-    { name = "cryptography", specifier = ">=50.0.2" },
-    { name = "flask", specifier = ">=3.1.3" },
-    { name = "nh3", specifier = ">=0.3.4" },
-    { name = "packaging", specifier = ">=24.2" },
-    { name = "playwright", specifier = ">=1.63.0" },
-    { name = "pytest", specifier = ">=9.1.1" },
-    { name = "pytest-xdist", specifier = ">=3.8.0" },
-    { name = "pyyaml", specifier = ">=6.0.3" },
-    { name = "sqlalchemy", specifier = ">=2.1.4" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "flaskteroids-lexxy", specifier = ">=0.1.0,<0.2" },
-    { name = "flaskteroids-turbo", specifier = ">=0.1.0,<0.2" },
-    { name = "mypy", specifier = ">=2.4.0" },
-    { name = "pytest-cov", specifier = ">=7.1.0" },
-    { name = "pytest-mock", specifier = ">=3.16.0" },
-    { name = "python-dotenv", specifier = ">=1.2" },
-    { name = "ruff", specifier = ">=0.17.0" },
-]
-integration = [
-    { name = "psycopg", extras = ["binary"], specifier = ">=3.3" },
-    { name = "pymysql", extras = ["rsa"], specifier = ">=1.1" },
+sdist = { url = "https://files.pythonhosted.org/packages/bd/69/be631ebfd604aabfd67f8496e49aa99af1f52edbf0e05d91554fc234bbab/flaskteroids-0.12.0.tar.gz", hash = "sha256:136a618c085e488d6335811670d78e4b6e4fa4e37483ab613c13664870381663", size = 213025, upload-time = "2026-10-29T14:05:27.088Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c4/df/c16340b43bc9a75d749d7c1c239cf07b90f21f6728799167fc0ab08e8988/flaskteroids-0.12.0-py3-none-any.whl", hash = "sha256:3d2876ce96c133660496f3f40491ebe925a54bd908138add7474f8183cb736c5", size = 262986, upload-time = "2026-10-29T14:05:25.485Z" },
 ]
 
 [[package]]
@@ -365,7 +339,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "boto3", specifier = ">=1.35" },
-    { name = "flaskteroids", editable = "../flaskteroids" },
+    { name = "flaskteroids", specifier = ">=0.12.0" },
 ]
 
 [package.metadata.requires-dev]

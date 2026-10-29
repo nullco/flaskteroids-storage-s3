@@ -17,17 +17,8 @@ jobs:
       fail-fast: false
       matrix:
         python: ["3.14", "3.15"]
-    defaults:
-      run:
-        working-directory: flaskteroids-storage-s3
     steps:
       - uses: actions/checkout@v4
-        with:
-          path: flaskteroids-storage-s3
-      - uses: actions/checkout@v4
-        with:
-          repository: nullco/flaskteroids
-          path: flaskteroids
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}

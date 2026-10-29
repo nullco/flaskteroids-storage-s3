@@ -11,7 +11,7 @@ requires-python = ">=3.14"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "Juan Sebastian Quintero" }]
-dependencies = ["flaskteroids>=0.11.0,<0.12", "boto3>=1.35"]
+dependencies = ["flaskteroids>=0.12.0", "boto3>=1.35"]
 
 [project.entry-points."flaskteroids.storage"]
 S3 = "flaskteroids_storage_s3:S3Service"
@@ -21,10 +21,6 @@ include = ["flaskteroids_storage_s3", "flaskteroids_storage_s3.*"]
 
 [dependency-groups]
 dev = ["pytest>=9.1.1", "pytest-mock>=3.16.0", "ruff>=0.17.0"]
-
-# Develop against the unreleased storage contract in the sibling checkout.
-[tool.uv.sources]
-flaskteroids = { path = "../flaskteroids", editable = true }
 
 [tool.pytest.ini_options]
 markers = ["system: browser-driven framework tests"]
